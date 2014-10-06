@@ -4,10 +4,7 @@ class Wheel(object):
 	def __init__(self, wheel_name, wheel_weight, wheel_cost):
 		self.wheel_name = wheel_name
 		self.wheel_weight = wheel_weight
-		self.wheel_cost = wheel_cost	
-
-	# def __repr__(self):
-	# 	return 'Repr : Wheel obj (wheel name={}, wheel weight={}, wheel cost={})'.format(self.wheel_name, self.wheel_weight, self.wheel_cost)
+		self.wheel_cost = wheel_cost		
   
   	def __repr__(self):
   		return "<Object id: {}>".format(int(id(self)))  		
@@ -15,9 +12,7 @@ class Wheel(object):
 	def get_description(self):
 		return "wheel model name is {}, wheel weight is {}lbs per wheel, wheel manufacturing cost is ${}.00 per wheel".format(self.wheel_name, self.wheel_weight, self.wheel_cost)
 	
-	# def get_id(self):
-	# 	return id()
-	
+		
 class Frame(object):
 	ALUMINIUM_TYPE = 1
 	STEEL_TYPE = 2
