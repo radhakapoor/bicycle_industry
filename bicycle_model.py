@@ -7,7 +7,7 @@ class Wheel(object):
 		self.wheel_cost = wheel_cost		
   
   	def __repr__(self):
-  		return "<Object id: {}>".format(int(id(self)))  		
+  		return "model {} <Object id: {}>".format(self.wheel_name, int(id(self)))  		
 
 	def get_description(self):
 		return "wheel model name is {}, wheel weight is {}lbs per wheel, wheel manufacturing cost is ${}.00 per wheel".format(self.wheel_name, self.wheel_weight, self.wheel_cost)
@@ -44,7 +44,7 @@ class Bicycle(object):
 		self.manufacturer_margin = manufacturer_margin
 
 	def __repr__(self):
-  		return "<Object id: {}>".format(int(id(self))) 	
+  		return "model {} <Object id: {}>".format(self.bicycle_name, int(id(self))) 	
 
 	def get_description(self):
 		return "{}, the manufacturer of this bicycle model is {}, {}, {}\n".format(self.bicycle_name, self.manufacturer, self.wheel, self.frame)
@@ -68,7 +68,7 @@ class Manufacturer(object):
 		self.models = models
 
 	def __repr__(self):
-  		return "<Object id: {}>".format(int(id(self))) 	
+  		return "Manufacturer name {}, <Object id: {}>".format(self.manufacturer_name, int(id(self))) 	
 	
 	def get_description(self):
 		return 'name of the manufacturer is {}, manufacturer margin is {}, the models it manufacturers are {}'.format(self.manufacturer_name, self.manufacturer_margin, self.models)
@@ -84,7 +84,7 @@ class BikeShop(object):
 		self.inventory = inventory
 
 	def __repr__(self):
-  		return "<Object id: {}>".format(int(id(self))) 	
+  		return "Bikeshop name {}, <Object id: {}>".format(self.bikeshop_name, int(id(self))) 	
 
 	def get_description(self):
 		return 'name of the bike shop is {}, bike shop margin is {}, bike shop\'s inventory is {}'.format(self.bikeshop_name, self.retail_margin, self.inventory)
@@ -115,7 +115,7 @@ class BikeShop(object):
 	def bikeweight(self):
 		"""name, weight of each bike in the bikeshop inventory"""
 		for bike in self.inventory:
-			print "bicycle model name is {} and total weight is {}lbs\n".format(bike.bicycle_name, bike.total_weight())	
+			print "{}, total weight is {}lbs\n".format(bike, bike.total_weight())	
 	
 	def affordable_bikes(self, customer):		
 		"""lists bikes the customer can afford within their budget, customer purchases most expensive within budget"""
@@ -125,9 +125,9 @@ class BikeShop(object):
 			if customer.fund >= price:
 				paid = price
 				customer_fund_balance = customer.fund - paid				
-				affordable_bikes.append(bike)
+				affordable_bikes.append(bike)				
 				purchase = affordable_bikes[-1]		
-				print "{} can afford {} for ${}".format(customer.customer_name, bike.bicycle_name, paid)				
+				print "{} can afford {} for ${}".format(customer.customer_name, bike, paid)				
 		self.sold.append(purchase)		
 		return "{} buys {} for ${} and her fund balance is ${}\n".format(customer.customer_name, purchase, paid, customer_fund_balance)
 
@@ -145,7 +145,7 @@ class Customer(object):
 		self.fund = fund
 
 	def __repr__(self):
-  		return "<Object id: {}>".format(int(id(self))) 	
+  		return "Customer name: {}, <Object id: {}>".format(self.customer_name, int(id(self))) 	
 
 	def get_description(self):
 		return "name of the customer is {}, customer\'s bike fund is ${}".format(self.customer_name, self.fund)

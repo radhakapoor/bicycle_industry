@@ -25,7 +25,7 @@ customer_three = Customer('Hannah', 1000)
 customers = [customer_one, customer_two, customer_three]
 
 """print out name and total weight of each bicycle model carried by the bike shop"""
-bikeshop_one.bikeweight() 
+bikeshop_one.bikeweight()
 
 """print out a list of bikes that the customers can afford given their budget, customer purchases one and prints out their fund balance"""
 for c in customers:
@@ -39,7 +39,6 @@ bikeshop_one.remaining_inventory()
 
 """bikes shop calculates profit made on sold bikes"""
 print "{}'s profit from the sale of the three bikes is ${}\n".format(bikeshop_one.bikeshop_name, bikeshop_one.profit())
-
 
 
 
