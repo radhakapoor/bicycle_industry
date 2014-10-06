@@ -4,11 +4,19 @@ class Wheel(object):
 	def __init__(self, wheel_name, wheel_weight, wheel_cost):
 		self.wheel_name = wheel_name
 		self.wheel_weight = wheel_weight
-		self.wheel_cost = wheel_cost
+		self.wheel_cost = wheel_cost	
 
-	def __repr__ (self):
+	# def __repr__(self):
+	# 	return 'Repr : Wheel obj (wheel name={}, wheel weight={}, wheel cost={})'.format(self.wheel_name, self.wheel_weight, self.wheel_cost)
+  
+  	def __repr__(self):
+  		return "<Object id: {}>".format(int(id(self)))  		
+
+	def get_description(self):
 		return "wheel model name is {}, wheel weight is {}lbs per wheel, wheel manufacturing cost is ${}.00 per wheel".format(self.wheel_name, self.wheel_weight, self.wheel_cost)
 	
+	# def get_id(self):
+	# 	return id()
 	
 class Frame(object):
 	ALUMINIUM_TYPE = 1
@@ -23,9 +31,12 @@ class Frame(object):
 		elif frame_code == Frame.STEEL_TYPE:
 			self.material = "steel"
 		else:
-			self.material = "carbon"		
+			self.material = "carbon"
 
 	def __repr__(self):
+  		return "<Object id: {}>".format(int(id(self))) 		
+
+	def get_description(self):
 		return "frame is made of {}, weight of the frame is {}lbs and manufacturing cost of the frame is ${}.00".format(self.material, self.frame_weight, self.frame_cost)
 
 class Bicycle(object):
@@ -38,6 +49,9 @@ class Bicycle(object):
 		self.manufacturer_margin = manufacturer_margin
 
 	def __repr__(self):
+  		return "<Object id: {}>".format(int(id(self))) 	
+
+	def get_description(self):
 		return "{}, the manufacturer of this bicycle model is {}, {}, {}\n".format(self.bicycle_name, self.manufacturer, self.wheel, self.frame)
 
 	def total_weight(self):		
@@ -57,8 +71,11 @@ class Manufacturer(object):
 	def __init__(self, manufacturer_name, manufacturer_margin, models):
 		self.manufacturer_name = manufacturer_name		
 		self.models = models
-	
+
 	def __repr__(self):
+  		return "<Object id: {}>".format(int(id(self))) 	
+	
+	def get_description(self):
 		return 'name of the manufacturer is {}, manufacturer margin is {}, the models it manufacturers are {}'.format(self.manufacturer_name, self.manufacturer_margin, self.models)
 	
 class BikeShop(object):
@@ -72,6 +89,9 @@ class BikeShop(object):
 		self.inventory = inventory
 
 	def __repr__(self):
+  		return "<Object id: {}>".format(int(id(self))) 	
+
+	def get_description(self):
 		return 'name of the bike shop is {}, bike shop margin is {}, bike shop\'s inventory is {}'.format(self.bikeshop_name, self.retail_margin, self.inventory)
 	
 	def inventory_value(self):
@@ -130,6 +150,9 @@ class Customer(object):
 		self.fund = fund
 
 	def __repr__(self):
+  		return "<Object id: {}>".format(int(id(self))) 	
+
+	def get_description(self):
 		return "name of the customer is {}, customer\'s bike fund is ${}".format(self.customer_name, self.fund)
 
 
