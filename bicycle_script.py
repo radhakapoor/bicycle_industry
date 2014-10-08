@@ -1,21 +1,33 @@
 
 from bicycle_model import Bicycle, Wheel, Frame, Manufacturer, BikeShop, Customer
 
-"""create 6 bicycle models"""
-b1 = Bicycle('slick', 9, 14, 40, 30, 1, 'Champion', 'Eagle', 0.1)
-b2 = Bicycle('medium', 6, 16, 30, 75, 2, 'Tour', 'Eagle', 0.1)
-b3 = Bicycle('medium', 6, 16, 15, 300, 3, 'Speedy', 'Eagle', 0.1)
+"""helper functions to create new bicyles"""
 
-b4 = Bicycle('slick', 9, 14, 40, 30, 1, 'RoadRage', 'Seagull', 0.2)
-b5 = Bicycle('slick', 9, 14, 15, 300, 3, 'MonsterHill', 'Seagull', 0.2)
-b6 = Bicycle('hard', 3, 125, 15, 300, 3, 'Giro', 'Seagull', 0.2)
+def new_champion():
+	return Bicycle('slick', 9, 14, 40, 30, 1, 'Champion', 'Eagle', 0.1)
+
+def new_tour():
+	return Bicycle('medium', 6, 16, 30, 75, 2, 'Tour', 'Eagle', 0.1)
+
+def new_speedy():
+	return Bicycle('medium', 6, 16, 15, 300, 3, 'Speedy', 'Eagle', 0.1)
+
+def new_roadrage():
+	return Bicycle('slick', 9, 14, 40, 30, 1, 'RoadRage', 'Seagull', 0.2)
+
+def new_monsterhill():
+	return Bicycle('slick', 9, 14, 15, 300, 3, 'MonsterHill', 'Seagull', 0.2)
+
+def new_giro():
+	return Bicycle('hard', 3, 125, 15, 300, 3, 'Giro', 'Seagull', 0.2)
 
 """create 2 manufacturers"""
-manufacturer_one = Manufacturer('Eagle', 0.1, [b1, b2, b3])
-manufacturer_two = Manufacturer('Seagull', 0.2, [b4, b5, b6])
+manufacturer_one = Manufacturer('Eagle', 0.1, [new_champion(), new_tour(), new_speedy()])
+manufacturer_two = Manufacturer('Seagull', 0.2, [new_roadrage(), new_monsterhill(), new_giro()])
 
 """create 1 bike shop"""
-bikeshop_one = BikeShop('East Village Shop', 0.2, [b1, b2, b2, b3, b3, b4, b4, b5, b5, b6])
+bikeshop_one = BikeShop('East Village Shop', 0.2, [new_champion(), new_tour(), new_tour(), new_speedy(), 
+							new_speedy(), new_roadrage(), new_roadrage(), new_monsterhill(), new_monsterhill(), new_giro()])
 
 """create 3 customers"""
 customer_one = Customer('Sarah', 200)
